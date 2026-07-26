@@ -1,0 +1,32 @@
+{
+  "name": "photobooth",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^16.2.12",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-webcam": "^7.2.0",
+    "konva": "^10.3.0",
+    "react-konva": "^19.2.5",
+    "qrcode": "^1.5.4",
+    "framer-motion": "^12.42.2"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/qrcode": "^1.5.5",
+    "@tailwindcss/postcss": "^4.3.3",
+    "tailwindcss": "^4.3.3",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^16.2.12"
+  }
+}

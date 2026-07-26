@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <rect width="192" height="192" rx="32" fill="url(#bg)"/>
+  <!-- Camera body -->
+  <rect x="36" y="64" width="120" height="72" rx="12" fill="white" opacity="0.95"/>
+  <!-- Viewfinder bump -->
+  <rect x="56" y="52" width="80" height="16" rx="6" fill="white" opacity="0.8"/>
+  <!-- Lens outer -->
+  <circle cx="96" cy="100" r="26" fill="#e2e8f0"/>
+  <!-- Lens inner -->
+  <circle cx="96" cy="100" r="20" fill="#1e293b"/>
+  <!-- Lens highlight -->
+  <circle cx="88" cy="92" r="6" fill="white" opacity="0.2"/>
+  <!-- Flash -->
+  <rect x="120" y="56" width="14" height="8" rx="3" fill="#fbbf24" opacity="0.5"/>
+  <!-- Bottom text bar -->
+  <rect x="52" y="148" width="88" height="4" rx="2" fill="white" opacity="0.3"/>
+</svg>
