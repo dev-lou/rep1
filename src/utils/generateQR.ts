@@ -16,16 +16,13 @@ export interface QROptions {
  * Uses the qrcode library on the client side.
  * Note: qrcode only accepts hex color values (no rgba).
  */
-export async function generateQRDataURL(
-  data: string,
-  options: QROptions = {}
-): Promise<string> {
+export async function generateQRDataURL(data: string, options: QROptions = {}): Promise<string> {
   if (!data) {
     throw new Error("No data provided for QR code generation");
   }
 
-  const dark = options.color?.dark || "#ffffff";
-  const light = options.color?.light || "#000000";
+  const dark = options.color?.dark || "#1a1a1a";
+  const light = options.color?.light || "#ffffff";
 
   try {
     const url = await QRCode.toDataURL(data, {

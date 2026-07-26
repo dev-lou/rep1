@@ -1,0 +1,56 @@
+name: 🐛 Bug Report
+description: Report a bug in the photo booth
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened? What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce this?
+      placeholder: |
+        1. Go to '...'
+        2. Tap '...'
+        3. See error
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: Browser
+      description: Which browser were you using?
+      placeholder: "Chrome 126"
+
+  - type: input
+    id: screen
+    attributes:
+      label: Screen / Device
+      description: What screen or device?
+      placeholder: "1920×1080 monitor / Surface tablet"
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Console Logs
+      description: Please paste any relevant browser console errors.
+      render: shell
+
+  - type: textarea
+    id: config
+    attributes:
+      label: Config
+      description: Paste your config.js (remove any secrets).
+      render: javascript

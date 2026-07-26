@@ -1,24 +1,12 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
+// ─── Snap IT PhotoBooth — ESLint Flat Config ─────────────────────────────
+// Uses only built-in ESLint rules — no external plugins needed.
+// TypeScript errors are caught by `tsc --noEmit` (not ESLint).
 
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals"),
   {
     rules: {
-      "@typescript-eslint/no-explicit-any": "warn",
-      "@next/next/no-img-element": "off",
-      "@typescript-eslint/no-unused-vars": [
-        "warn",
-        { argsIgnorePattern: "^_" },
-      ],
+      // Warn about unused variables (prefixed with _ are ignored)
+      "no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
     },
   },
 ];

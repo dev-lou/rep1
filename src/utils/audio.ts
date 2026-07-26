@@ -10,7 +10,7 @@ const getAudioContext = () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)();
   }
-  if (audioCtx.state === 'suspended') {
+  if (audioCtx.state === "suspended") {
     audioCtx.resume();
   }
   return audioCtx;
@@ -33,11 +33,11 @@ export const playInteractionSound = (type: "click" | "confirm" | "rechoose" = "c
     osc.type = "sine";
     osc.frequency.setValueAtTime(600, now);
     osc.frequency.exponentialRampToValueAtTime(800, now + 0.05);
-    
+
     gainNode.gain.setValueAtTime(0, now);
     gainNode.gain.linearRampToValueAtTime(0.1, now + 0.01);
     gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
-    
+
     osc.start(now);
     osc.stop(now + 0.1);
   } else if (type === "confirm") {
@@ -45,11 +45,11 @@ export const playInteractionSound = (type: "click" | "confirm" | "rechoose" = "c
     osc.type = "triangle";
     osc.frequency.setValueAtTime(440, now); // A4
     osc.frequency.setValueAtTime(554.37, now + 0.1); // C#5
-    
+
     gainNode.gain.setValueAtTime(0, now);
     gainNode.gain.linearRampToValueAtTime(0.15, now + 0.02);
     gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
-    
+
     osc.start(now);
     osc.stop(now + 0.3);
   } else if (type === "rechoose") {
@@ -57,11 +57,11 @@ export const playInteractionSound = (type: "click" | "confirm" | "rechoose" = "c
     osc.type = "sine";
     osc.frequency.setValueAtTime(400, now);
     osc.frequency.exponentialRampToValueAtTime(300, now + 0.1);
-    
+
     gainNode.gain.setValueAtTime(0, now);
     gainNode.gain.linearRampToValueAtTime(0.1, now + 0.02);
     gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
-    
+
     osc.start(now);
     osc.stop(now + 0.15);
   }

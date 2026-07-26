@@ -12,8 +12,8 @@ const nextConfig = {
   },
   // Disable powered-by header
   poweredByHeader: false,
-  // React strict mode for development
-  reactStrictMode: true,
+  // React strict mode — disabled for production kiosk performance
+  reactStrictMode: false,
   // Allow HMR from network IP (kiosk accesses via 192.168.0.113)
   allowedDevOrigins: ["192.168.0.113"],
 };

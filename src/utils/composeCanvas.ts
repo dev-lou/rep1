@@ -6,7 +6,7 @@
  */
 export function stageToBlob(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  stageRef: React.RefObject<any>
+  stageRef: React.RefObject<any>,
 ): Promise<Blob | null> {
   if (!stageRef.current) {
     return Promise.reject(new Error("Stage reference is not available"));
@@ -15,7 +15,7 @@ export function stageToBlob(
   // Use Konva's native toBlob — directly exports canvas to PNG blob
   // Much faster than toDataURL + fetch(dataURL).blob()
   return stageRef.current.toBlob({
-    pixelRatio: 2,  // Retina quality
+    pixelRatio: 1.5, // High quality — balanced for performance on low-end laptops
     mimeType: "image/png",
   });
 }
@@ -27,10 +27,10 @@ export function stageToBlob(
 export function getLayoutPositions(
   layoutId: string,
   canvasWidth: number,
-  canvasHeight: number
+  canvasHeight: number,
 ): Array<{ x: number; y: number; width: number; height: number }> {
   const margin = canvasWidth * 0.04;
-  const isPolaroid = layoutId === 'polaroid';
+  const isPolaroid = layoutId === "polaroid";
   const logoMargin = isPolaroid ? canvasHeight * 0.18 : canvasHeight * 0.1;
   const usableWidth = canvasWidth - margin * 2;
   const usableHeight = canvasHeight - margin - logoMargin;

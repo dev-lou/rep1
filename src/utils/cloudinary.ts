@@ -19,20 +19,23 @@ export interface UploadError {
 /**
  * Upload an image blob to Cloudinary using unsigned upload.
  * No backend needed — works directly from the browser.
+ * @param tags Optional array of tags to apply to the image on upload.
  */
-export async function uploadToCloudinary(blob: Blob): Promise<UploadResult> {
+export async function uploadToCloudinary(blob: Blob, tags?: string[]): Promise<UploadResult> {
   const { cloudinaryCloudName, cloudinaryUploadPreset } = CONFIG;
 
   if (!cloudinaryCloudName || cloudinaryCloudName === "YOUR_CLOUD_NAME") {
     throw {
-      message: "Cloudinary cloud name not configured. Update src/config.js with your Cloudinary details.",
+      message:
+        "Cloudinary cloud name not configured. Update src/config.js with your Cloudinary details.",
       retryable: false,
     } as UploadError;
   }
 
   if (!cloudinaryUploadPreset || cloudinaryUploadPreset === "YOUR_UPLOAD_PRESET") {
     throw {
-      message: "Cloudinary upload preset not configured. Update src/config.js with your upload preset.",
+      message:
+        "Cloudinary upload preset not configured. Update src/config.js with your upload preset.",
       retryable: false,
     } as UploadError;
   }
@@ -41,18 +44,19 @@ export async function uploadToCloudinary(blob: Blob): Promise<UploadResult> {
   formData.append("file", blob);
   formData.append("upload_preset", cloudinaryUploadPreset);
 
+  if (tags && tags.length > 0) {
+    formData.append("tags", tags.join(","));
+  }
+
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), 30000); // 30s timeout
 
   try {
-    const res = await fetch(
-      `https://api.cloudinary.com/v1_1/${cloudinaryCloudName}/image/upload`,
-      {
-        method: "POST",
-        body: formData,
-        signal: controller.signal,
-      }
-    );
+    const res = await fetch(`https://api.cloudinary.com/v1_1/${cloudinaryCloudName}/image/upload`, {
+      method: "POST",
+      body: formData,
+      signal: controller.signal,
+    });
 
     clearTimeout(timeoutId);
 

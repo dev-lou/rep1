@@ -27,30 +27,50 @@
   -webkit-user-select: none;
 }
 
-html, body {
-  height: 100%; width: 100%;
+html,
+body {
+  height: 100%;
+  width: 100%;
   overflow: hidden;
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-::-webkit-scrollbar { display: none; }
-* { scrollbar-width: none; -ms-overflow-style: none; }
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
 
 :root {
   --accent: #3b82f6;
   --accent-light: #60a5fa;
   --accent-dark: #2563eb;
-  --card-shadow: 0 2px 12px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04);
-  --card-shadow-hover: 0 8px 30px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+  --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+  --card-shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 /* ── Ambient animated gradient background ── */
 
 .ambient-bg {
   background:
-    radial-gradient(ellipse 80% 60% at 0% 20%, color-mix(in srgb, var(--accent) 6%, #f0eeeb) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 100% 40%, color-mix(in srgb, var(--accent) 4%, #f5f4f1) 0%, transparent 50%),
-    radial-gradient(ellipse 70% 40% at 50% 100%, color-mix(in srgb, var(--accent) 3%, #faf9f6) 0%, transparent 50%);
+    radial-gradient(
+      ellipse 80% 60% at 0% 20%,
+      color-mix(in srgb, var(--accent) 6%, #f0eeeb) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 100% 40%,
+      color-mix(in srgb, var(--accent) 4%, #f5f4f1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 70% 40% at 50% 100%,
+      color-mix(in srgb, var(--accent) 3%, #faf9f6) 0%,
+      transparent 50%
+    );
   background-blend-mode: normal;
 }
 
@@ -66,8 +86,13 @@ html, body {
 }
 
 @keyframes textGradientShift {
-  0%, 100% { background-position: 0% center; }
-  50% { background-position: 100% center; }
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
 }
 
 .text-shimmer {
@@ -95,12 +120,18 @@ html, body {
 }
 
 @keyframes shimmerText {
-  0% { background-position: 150% center; }
-  100% { background-position: -150% center; }
+  0% {
+    background-position: 150% center;
+  }
+  100% {
+    background-position: -150% center;
+  }
 }
 
 .text-glow {
-  text-shadow: 0 0 40px rgba(59, 130, 246, 0.15), 0 0 80px rgba(6, 182, 212, 0.08);
+  text-shadow:
+    0 0 40px rgba(59, 130, 246, 0.15),
+    0 0 80px rgba(6, 182, 212, 0.08);
 }
 
 .subtitle-premium {
@@ -114,7 +145,7 @@ html, body {
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.6);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
 /* ── Cards ── */
@@ -123,14 +154,14 @@ html, body {
   background: #ffffff;
   border-radius: 16px;
   box-shadow: var(--card-shadow);
-  border: 1px solid rgba(0,0,0,0.04);
+  border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .card-strong {
   background: #ffffff;
   border-radius: 16px;
   box-shadow: var(--card-shadow-hover);
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 /* ── Primary button ── */
@@ -175,15 +206,15 @@ html, body {
   font-size: 0.9375rem;
   transition: all 0.2s ease-out;
   min-height: 48px;
-  background: rgba(0,0,0,0.04);
-  border: 1px solid rgba(0,0,0,0.06);
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   color: #4a4a4a;
   cursor: pointer;
 }
 
 .btn-secondary:hover {
-  background: rgba(0,0,0,0.06);
-  border-color: rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.1);
   transform: translateY(-1px);
 }
 
@@ -203,8 +234,12 @@ html, body {
 }
 
 @keyframes flashAnim {
-  0% { opacity: 0.95; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* ── Spinner ── */
@@ -212,7 +247,7 @@ html, body {
 .spinner {
   width: 40px;
   height: 40px;
-  border: 3px solid rgba(0,0,0,0.06);
+  border: 3px solid rgba(0, 0, 0, 0.06);
   border-top-color: var(--accent);
   border-radius: 50%;
   animation: spin 0.7s linear infinite;
@@ -225,14 +260,16 @@ html, body {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* ── Progress bar ── */
 
 .progress-bar {
   height: 4px;
-  background: rgba(0,0,0,0.06);
+  background: rgba(0, 0, 0, 0.06);
   border-radius: 2px;
   overflow: hidden;
 }
@@ -260,9 +297,18 @@ html, body {
 }
 
 @keyframes countPulse {
-  0%   { transform: scale(1.5); opacity: 0; }
-  50%  { transform: scale(1);   opacity: 1; }
-  100% { transform: scale(0.92); opacity: 0.85; }
+  0% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.92);
+    opacity: 0.85;
+  }
 }
 
 /* ── Thumbnails ── */
@@ -283,7 +329,7 @@ html, body {
 }
 
 .thumb-item.done {
-  border-color: rgba(0,0,0,0.08);
+  border-color: rgba(0, 0, 0, 0.08);
   opacity: 0.6;
 }
 
@@ -296,7 +342,7 @@ html, body {
   cursor: pointer;
   transition: all 0.25s ease-out;
   background: #ffffff;
-  border: 2px solid rgba(0,0,0,0.05);
+  border: 2px solid rgba(0, 0, 0, 0.05);
   min-height: 170px;
   box-shadow: var(--card-shadow);
 }
@@ -314,8 +360,9 @@ html, body {
 .layout-card.selected {
   border-color: var(--accent);
   background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 4%, #fff), #fff);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 15%, transparent),
-              var(--card-shadow-hover);
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--accent) 15%, transparent),
+    var(--card-shadow-hover);
 }
 
 /* ── Frame pill ── */
@@ -329,16 +376,16 @@ html, body {
   cursor: pointer;
   background: transparent;
   border: none;
-  color: rgba(0,0,0,0.4);
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .frame-pill:hover {
-  background: rgba(0,0,0,0.04);
-  color: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .frame-pill.active {
-  background: rgba(0,0,0,0.06);
+  background: rgba(0, 0, 0, 0.06);
   color: #1a1a1a;
   font-weight: 600;
 }
@@ -358,14 +405,25 @@ html, body {
 /* ── Animations ── */
 
 @keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  33% { transform: translateY(-6px) rotate(0.5deg); }
-  66% { transform: translateY(-3px) rotate(-0.5deg); }
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-6px) rotate(0.5deg);
+  }
+  66% {
+    transform: translateY(-3px) rotate(-0.5deg);
+  }
 }
 
 @keyframes shine {
-  0% { background-position: 200% center; }
-  100% { background-position: -200% center; }
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
 }
 
 /* ── Camera capture button animations (GPU-accelerated) ── */
@@ -376,8 +434,15 @@ html, body {
 }
 
 @keyframes captureRingAnim {
-  0%, 100% { transform: scale(1); opacity: 0.5; }
-  50% { transform: scale(1.3); opacity: 0; }
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
 }
 
 .capture-pulse {
@@ -386,8 +451,13 @@ html, body {
 }
 
 @keyframes capturePulseAnim {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 /* ── Idle screen float animation (GPU-accelerated) ── */
@@ -398,69 +468,166 @@ html, body {
 }
 
 @keyframes idleFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 /* ── Custom Loading Animations ── */
 
 /* Camera loading */
 @keyframes cameraRing {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 @keyframes cameraRingReverse {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(-360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }
 @keyframes cameraFlash {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.8; }
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
 }
 @keyframes cameraLens {
-  0%, 100% { transform: scale(1); opacity: 0.6; }
-  50% { transform: scale(0.85); opacity: 0.3; }
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(0.85);
+    opacity: 0.3;
+  }
 }
-.animate-camera-ring { animation: cameraRing 2s linear infinite; transform-origin: center; will-change: transform; }
-.animate-camera-ring-reverse { animation: cameraRingReverse 2.5s linear infinite; transform-origin: center; will-change: transform; }
-.animate-camera-flash { animation: cameraFlash 1.2s ease-in-out infinite; }
-.animate-camera-lens { animation: cameraLens 1.8s ease-in-out infinite; transform-origin: center; will-change: transform; }
+.animate-camera-ring {
+  animation: cameraRing 2s linear infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+.animate-camera-ring-reverse {
+  animation: cameraRingReverse 2.5s linear infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+.animate-camera-flash {
+  animation: cameraFlash 1.2s ease-in-out infinite;
+}
+.animate-camera-lens {
+  animation: cameraLens 1.8s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform;
+}
 
 /* Processing loading */
 @keyframes processingArc {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 @keyframes processingScan {
-  0% { transform: translateY(0); opacity: 0.4; }
-  50% { transform: translateY(20px); opacity: 0.8; }
-  100% { transform: translateY(0); opacity: 0.4; }
+  0% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(20px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
 }
 @keyframes processingPulse {
-  0%, 100% { opacity: 0.2; r: 3; }
-  50% { opacity: 0.5; r: 4; }
+  0%,
+  100% {
+    opacity: 0.2;
+    r: 3;
+  }
+  50% {
+    opacity: 0.5;
+    r: 4;
+  }
 }
-.animate-processing-arc { animation: processingArc 1.8s linear infinite; transform-origin: center; will-change: transform; }
-.animate-processing-scan { animation: processingScan 2s ease-in-out infinite; will-change: transform; }
-.animate-processing-pulse { animation: processingPulse 1.5s ease-in-out infinite; }
+.animate-processing-arc {
+  animation: processingArc 1.8s linear infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+.animate-processing-scan {
+  animation: processingScan 2s ease-in-out infinite;
+  will-change: transform;
+}
+.animate-processing-pulse {
+  animation: processingPulse 1.5s ease-in-out infinite;
+}
 
 /* QR loading */
 @keyframes qrCell {
-  0%, 60% { opacity: 0; transform: scale(0.5); }
-  30% { opacity: 0.6; transform: scale(1); }
-  100% { opacity: 0; transform: scale(1); }
+  0%,
+  60% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  30% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
 }
 @keyframes qrCenter {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.1); }
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
 }
 @keyframes qrCorner {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
 }
-.animate-qr-cell { animation: qrCell 2.5s ease-in-out infinite; }
-.animate-qr-center { animation: qrCenter 1.5s ease-in-out infinite; transform-origin: center; }
-.animate-qr-corner { animation: qrCorner 1.5s ease-in-out infinite; }
+.animate-qr-cell {
+  animation: qrCell 2.5s ease-in-out infinite;
+}
+.animate-qr-center {
+  animation: qrCenter 1.5s ease-in-out infinite;
+  transform-origin: center;
+}
+.animate-qr-corner {
+  animation: qrCorner 1.5s ease-in-out infinite;
+}
 
 /* ── Idle pulse button — CSS-only, no React re-renders ── */
 
@@ -470,12 +637,14 @@ html, body {
 }
 
 @keyframes idlePulseShadow {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 4px 20px color-mix(in srgb, var(--pulse-accent, #3b82f6) 20%, transparent);
   }
   50% {
-    box-shadow: 0 8px 40px color-mix(in srgb, var(--pulse-accent, #3b82f6) 33%, transparent),
-                0 0 60px color-mix(in srgb, var(--pulse-accent, #3b82f6) 12%, transparent);
+    box-shadow:
+      0 8px 40px color-mix(in srgb, var(--pulse-accent, #3b82f6) 33%, transparent),
+      0 0 60px color-mix(in srgb, var(--pulse-accent, #3b82f6) 12%, transparent);
   }
 }
 
@@ -489,25 +658,33 @@ html, body {
 }
 
 .floating-shape-1 {
-  width: 300px; height: 300px;
-  top: -80px; right: -60px;
+  width: 300px;
+  height: 300px;
+  top: -80px;
+  right: -60px;
   animation: float 8s ease-in-out infinite;
 }
 
 .floating-shape-2 {
-  width: 200px; height: 200px;
-  bottom: -40px; left: -40px;
+  width: 200px;
+  height: 200px;
+  bottom: -40px;
+  left: -40px;
   animation: float 10s ease-in-out infinite reverse;
 }
 
 .floating-shape-3 {
-  width: 120px; height: 120px;
-  top: 40%; left: -30px;
+  width: 120px;
+  height: 120px;
+  top: 40%;
+  left: -30px;
   animation: float 12s ease-in-out infinite 2s;
 }
 
 /* ── PWA ── */
 
 @media (display-mode: standalone) {
-  body { overscroll-behavior: none; }
+  body {
+    overscroll-behavior: none;
+  }
 }

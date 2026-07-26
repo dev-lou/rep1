@@ -12,14 +12,22 @@ interface LayoutPickerProps {
 
 const PREVIEW_IMG = "url('/preview-layout.png')";
 
-function LayoutPreview({ layoutId, previewMode = false }: { layoutId: string; previewMode?: boolean }) {
+function LayoutPreview({
+  layoutId,
+  previewMode = false,
+}: {
+  layoutId: string;
+  previewMode?: boolean;
+}) {
   const c = "rounded-lg overflow-hidden bg-cover bg-center";
   const bgStyle = { backgroundImage: PREVIEW_IMG };
-  
+
   switch (layoutId) {
     case "strip":
       return (
-        <div className={`flex flex-col gap-3 mx-auto p-4 ${previewMode ? 'h-[500px] w-[350px] bg-white shadow-2xl rounded-xl' : 'h-64 w-48'}`}>
+        <div
+          className={`flex flex-col gap-3 mx-auto p-4 ${previewMode ? "h-[500px] w-[350px] bg-white shadow-2xl rounded-xl" : "h-64 w-48"}`}
+        >
           <div className={`flex-1 ${c}`} style={bgStyle} />
           <div className={`flex-1 ${c}`} style={bgStyle} />
           <div className={`flex-1 ${c}`} style={bgStyle} />
@@ -27,7 +35,9 @@ function LayoutPreview({ layoutId, previewMode = false }: { layoutId: string; pr
       );
     case "grid":
       return (
-        <div className={`grid grid-cols-2 gap-3 mx-auto p-4 ${previewMode ? 'h-[500px] w-[500px] bg-white shadow-2xl rounded-xl' : 'h-64 w-64'}`}>
+        <div
+          className={`grid grid-cols-2 gap-3 mx-auto p-4 ${previewMode ? "h-[500px] w-[500px] bg-white shadow-2xl rounded-xl" : "h-64 w-64"}`}
+        >
           <div className={c} style={bgStyle} />
           <div className={c} style={bgStyle} />
           <div className={c} style={bgStyle} />
@@ -36,15 +46,21 @@ function LayoutPreview({ layoutId, previewMode = false }: { layoutId: string; pr
       );
     case "single":
       return (
-        <div className={`flex items-center justify-center mx-auto p-4 ${previewMode ? 'h-[500px] w-[450px] bg-white shadow-2xl rounded-xl' : 'h-64 w-56'}`}>
+        <div
+          className={`flex items-center justify-center mx-auto p-4 ${previewMode ? "h-[500px] w-[450px] bg-white shadow-2xl rounded-xl" : "h-64 w-56"}`}
+        >
           <div className={`w-full h-full ${c}`} style={bgStyle} />
         </div>
       );
     case "polaroid":
       return (
-        <div className={`flex flex-col items-center mx-auto p-4 ${previewMode ? 'h-[500px] w-[450px] bg-white shadow-2xl rounded-xl' : 'h-64 w-56'}`}>
+        <div
+          className={`flex flex-col items-center mx-auto p-4 ${previewMode ? "h-[500px] w-[450px] bg-white shadow-2xl rounded-xl" : "h-64 w-56"}`}
+        >
           <div className={`flex-1 w-full ${c}`} style={bgStyle} />
-          <div className={`${previewMode ? 'h-16' : 'h-10'} w-3/4 mt-4 rounded-md bg-black/[0.02]`} />
+          <div
+            className={`${previewMode ? "h-16" : "h-10"} w-3/4 mt-4 rounded-md bg-black/[0.02]`}
+          />
         </div>
       );
     default:
@@ -90,10 +106,15 @@ export default function LayoutPicker({ onSelect }: LayoutPickerProps) {
             transition={{ duration: 0.4 }}
           >
             <motion.div className="text-center mb-12">
-              <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-gradient text-glow" style={{ fontFamily: "var(--font-heading)" }}>
+              <h2
+                className="text-6xl md:text-8xl font-black tracking-tighter text-gradient text-glow"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
                 Choose Your Layout
               </h2>
-              <p className="mt-6 subtitle-premium text-lg md:text-xl">Pick how your photos are arranged</p>
+              <p className="mt-6 subtitle-premium text-lg md:text-xl">
+                Pick how your photos are arranged
+              </p>
             </motion.div>
 
             <motion.div
@@ -110,12 +131,22 @@ export default function LayoutPicker({ onSelect }: LayoutPickerProps) {
                   variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } }}
                   whileHover={{ scale: 1.03, y: -4 }}
                   whileTap={{ scale: 0.98 }}
-                  style={{ transition: 'border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease' }}
+                  style={{
+                    transition:
+                      "border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease",
+                  }}
                 >
                   <LayoutPreview layoutId={layout.id} />
                   <div className="mt-6 text-center flex flex-col items-center">
-                    <h3 className="font-bold text-2xl tracking-tight" style={{ fontFamily: "var(--font-heading)" }}>{layout.name}</h3>
-                    <p className="text-base mt-2 px-2" style={{ color: "#64748b" }}>{layout.description}</p>
+                    <h3
+                      className="font-bold text-2xl tracking-tight"
+                      style={{ fontFamily: "var(--font-heading)" }}
+                    >
+                      {layout.name}
+                    </h3>
+                    <p className="text-base mt-2 px-2" style={{ color: "#64748b" }}>
+                      {layout.description}
+                    </p>
                     <span className="inline-block mt-4 text-sm font-semibold px-4 py-1.5 rounded-full badge-glass">
                       {layout.shots} {layout.shots === 1 ? "shot" : "shots"}
                     </span>
@@ -136,13 +167,16 @@ export default function LayoutPicker({ onSelect }: LayoutPickerProps) {
             transition={{ duration: 0.5, type: "spring", bounce: 0.2 }}
           >
             <motion.div className="text-center mb-10">
-              <h2 className="text-5xl md:text-6xl font-black tracking-tighter text-gradient text-glow" style={{ fontFamily: "var(--font-heading)" }}>
+              <h2
+                className="text-5xl md:text-6xl font-black tracking-tighter text-gradient text-glow"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
                 {selectedLayoutInfo?.name}
               </h2>
               <p className="mt-3 subtitle-premium text-lg">Preview</p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="mb-12"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -165,7 +199,7 @@ export default function LayoutPicker({ onSelect }: LayoutPickerProps) {
               >
                 ← Go Back
               </motion.button>
-              
+
               <motion.button
                 onClick={handleConfirm}
                 className="btn-accent text-2xl font-bold px-16 py-6 gap-4 rounded-full shadow-lg"

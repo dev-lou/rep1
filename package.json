@@ -6,27 +6,43 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint src/",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
+    "framer-motion": "^12.42.2",
+    "konva": "^10.3.0",
     "next": "^16.2.12",
+    "qrcode": "^1.5.4",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "react-webcam": "^7.2.0",
-    "konva": "^10.3.0",
     "react-konva": "^19.2.5",
-    "qrcode": "^1.5.4",
-    "framer-motion": "^12.42.2"
+    "react-webcam": "^7.2.0"
   },
   "devDependencies": {
-    "typescript": "^6.0.3",
+    "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^22.0.0",
+    "@types/qrcode": "^1.5.5",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "@types/qrcode": "^1.5.5",
-    "@tailwindcss/postcss": "^4.3.3",
-    "tailwindcss": "^4.3.3",
     "eslint": "^9.0.0",
-    "eslint-config-next": "^16.2.12"
+    "eslint-config-next": "^16.2.12",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.9.6",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3"
   }
 }

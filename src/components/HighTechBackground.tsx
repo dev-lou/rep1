@@ -10,15 +10,14 @@ import { motion } from "framer-motion";
 export default function HighTechBackground() {
   return (
     <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-white">
-      
       {/* ── ROTATING GRADIENT — uses Framer Motion so it WILL animate ── */}
       <motion.div
         style={{
-          position: 'absolute',
-          width: '140%',
-          height: '140%',
-          top: '-20%',
-          left: '-20%',
+          position: "absolute",
+          width: "140%",
+          height: "140%",
+          top: "-20%",
+          left: "-20%",
           background: `
             conic-gradient(
               from 0deg at 50% 50%,
@@ -31,7 +30,7 @@ export default function HighTechBackground() {
               #dbeafe 360deg
             )
           `,
-          filter: 'blur(40px)',
+          filter: "blur(40px)",
           opacity: 0.28,
         }}
         animate={{ rotate: 360 }}
@@ -45,11 +44,11 @@ export default function HighTechBackground() {
       {/* ── COUNTER-ROTATING layer for extra depth ── */}
       <motion.div
         style={{
-          position: 'absolute',
-          width: '120%',
-          height: '120%',
-          top: '-10%',
-          left: '-10%',
+          position: "absolute",
+          width: "120%",
+          height: "120%",
+          top: "-10%",
+          left: "-10%",
           background: `
             conic-gradient(
               from 180deg at 50% 50%,
@@ -59,7 +58,7 @@ export default function HighTechBackground() {
               rgba(219,234,254,0.8) 360deg
             )
           `,
-          filter: 'blur(60px)',
+          filter: "blur(60px)",
           opacity: 0.18,
         }}
         animate={{ rotate: -360 }}
@@ -71,10 +70,11 @@ export default function HighTechBackground() {
       />
 
       {/* ── Strong white wash — keeps center crisp, blue only bleeds from edges ── */}
-      <div 
+      <div
         className="absolute inset-0"
         style={{
-          background: 'radial-gradient(ellipse 65% 65% at 50% 50%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 50%, transparent 100%)',
+          background:
+            "radial-gradient(ellipse 65% 65% at 50% 50%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 50%, transparent 100%)",
         }}
       />
 
@@ -82,13 +82,13 @@ export default function HighTechBackground() {
       <div className="absolute inset-0 flex items-center justify-center opacity-30">
         <motion.div
           className="absolute rounded-full border border-blue-400"
-          style={{ width: '30vw', height: '30vw' }}
+          style={{ width: "30vw", height: "30vw" }}
           animate={{ scale: [1, 1.5], opacity: [0.8, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeOut" }}
         />
         <motion.div
           className="absolute rounded-full border border-cyan-300"
-          style={{ width: '45vw', height: '45vw' }}
+          style={{ width: "45vw", height: "45vw" }}
           animate={{ rotate: 360 }}
           transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
         >
@@ -100,14 +100,14 @@ export default function HighTechBackground() {
       {/* ── Center rotating orb — visible animation around content (now above white wash) ── */}
       <motion.div
         style={{
-          position: 'absolute',
-          width: '50vw',
-          height: '50vw',
-          top: '50%',
-          left: '50%',
-          x: '-50%',
-          y: '-50%',
-          borderRadius: '50%',
+          position: "absolute",
+          width: "50vw",
+          height: "50vw",
+          top: "50%",
+          left: "50%",
+          x: "-50%",
+          y: "-50%",
+          borderRadius: "50%",
           background: `
             conic-gradient(
               from 0deg,
@@ -118,10 +118,10 @@ export default function HighTechBackground() {
               rgba(56, 189, 248, 0.25)
             )
           `,
-          filter: 'blur(35px)',
-          mixBlendMode: 'multiply',
+          filter: "blur(35px)",
+          mixBlendMode: "multiply",
         }}
-        animate={{ 
+        animate={{
           rotate: -360,
           scale: [1, 1.1, 1],
         }}
@@ -132,14 +132,14 @@ export default function HighTechBackground() {
       />
 
       {/* ── Grid Overlay ── */}
-      <div 
+      <div
         className="absolute inset-0 z-20"
         style={{
           backgroundImage: `
             linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
             linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px)
           `,
-          backgroundSize: '48px 48px',
+          backgroundSize: "48px 48px",
         }}
       />
     </div>
